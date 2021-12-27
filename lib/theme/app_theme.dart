@@ -9,13 +9,25 @@ class AppTheme {
       color: primary,
       elevation: 0,
     ),
+    listTileTheme: const ListTileThemeData(
+      iconColor: primary,
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(primary: primary),
+    ),
   );
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
+    scaffoldBackgroundColor: Colors.black,
     primaryColor: primary,
     appBarTheme: const AppBarTheme(
       color: primary,
       elevation: 0,
     ),
-    scaffoldBackgroundColor: Colors.black,
+    listTileTheme: const ListTileThemeData(
+      iconColor: primary,
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(primary: primary),
+    ),
   );
 }
