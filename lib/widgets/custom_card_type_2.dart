@@ -28,10 +28,10 @@ class CustomCardType2 extends StatelessWidget {
             placeholder: const AssetImage('assets/images/jar-loading.gif'),
             width: double.infinity,
             height: 230,
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.cover,
             fadeInDuration: const Duration(milliseconds: 300),
           ),
-        if (name != null)
+          if (name != null)
             Container(
               alignment: AlignmentDirectional.centerEnd,
               padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),

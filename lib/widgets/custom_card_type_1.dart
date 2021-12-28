@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../theme/theme.dart';
-
 class CustomCardType1 extends StatelessWidget {
   const CustomCardType1({
     Key? key,
