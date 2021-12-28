@@ -26,6 +26,11 @@ class AppTheme {
         elevation: 0,
       ),
     ),
+    dialogTheme: DialogTheme(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+    ),
     textTheme: lightTextTheme,
   );
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
@@ -50,6 +55,11 @@ class AppTheme {
         primary: primary,
         shape: const StadiumBorder(),
         elevation: 0,
+      ),
+    ),
+    dialogTheme: DialogTheme(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
       ),
     ),
     textTheme: darkTextTheme,
