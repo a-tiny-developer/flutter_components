@@ -72,6 +72,11 @@ class AppTheme {
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
+    bodyText2: GoogleFonts.roboto(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
     bodyText1: GoogleFonts.roboto(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
@@ -101,6 +106,11 @@ class AppTheme {
 
   static TextTheme darkTextTheme = TextTheme(
     subtitle1: GoogleFonts.roboto(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    bodyText2: GoogleFonts.roboto(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
