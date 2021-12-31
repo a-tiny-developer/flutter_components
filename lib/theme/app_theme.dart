@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static const Color primary = Colors.indigo;
@@ -6,6 +7,7 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData.light().copyWith(
     primaryColor: primary,
     appBarTheme: const AppBarTheme(
+      centerTitle: true,
       color: primary,
       elevation: 0,
     ),
@@ -64,19 +66,68 @@ class AppTheme {
     ),
     textTheme: darkTextTheme,
   );
-
-  static const TextTheme lightTextTheme = TextTheme(
-    headline3: TextStyle(
-      fontSize: 16,
+  static TextTheme lightTextTheme = TextTheme(
+    subtitle1: GoogleFonts.roboto(
+      fontSize: 14.0,
       fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+    bodyText1: GoogleFonts.roboto(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+    headline1: GoogleFonts.roboto(
+      fontSize: 32.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    ),
+    headline2: GoogleFonts.roboto(
+      fontSize: 21.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+    headline3: GoogleFonts.roboto(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    headline6: GoogleFonts.roboto(
+      fontSize: 20.0,
+      fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
   );
 
-  static const TextTheme darkTextTheme = TextTheme(
-    headline3: TextStyle(
-      fontSize: 16,
+  static TextTheme darkTextTheme = TextTheme(
+    subtitle1: GoogleFonts.roboto(
+      fontSize: 14.0,
       fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    bodyText1: GoogleFonts.roboto(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    headline1: GoogleFonts.roboto(
+      fontSize: 32.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+    headline2: GoogleFonts.roboto(
+      fontSize: 21.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    headline3: GoogleFonts.roboto(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
+    headline6: GoogleFonts.roboto(
+      fontSize: 20.0,
+      fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
   );

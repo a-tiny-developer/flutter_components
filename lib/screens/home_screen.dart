@@ -19,7 +19,9 @@ class HomeScreen extends StatelessWidget {
             leading: Icon(
               AppRoutes.menuOptions[index].icon,
             ),
-            title: Text(AppRoutes.menuOptions[index].name),
+            title: Text(
+              AppRoutes.menuOptions[index].name,
+            ),
             onTap: () {
               // final route = MaterialPageRoute(
               //   builder: (context) {
