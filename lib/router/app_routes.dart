@@ -59,7 +59,7 @@ class AppRoutes {
       route: 'listviewbuilder',
       name: 'InfineScroll & Pull to refresh',
       screen: ListViewBuilderScreen(),
-      icon: Icons.build_circle_outlined,
+      icon: Icons.swap_vert_circle_outlined,
     ),
   ];
 

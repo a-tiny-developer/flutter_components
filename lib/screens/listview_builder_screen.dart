@@ -9,7 +9,7 @@ class ListViewBuilderScreen extends StatefulWidget {
 }
 
 class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
-  final imagesIds = List.generate(10, (index) => 1 + index);
+  final imagesIds = List.generate(5, (index) => 1 + index);
   final scrollController = ScrollController();
   bool isLoading = false;
 
@@ -58,6 +58,21 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
     });
   }
 
+  Future<void> onRefresh() async {
+    await Future.delayed(const Duration(seconds: 2), () {
+      final lastId = imagesIds.last;
+      imagesIds.clear();
+      imagesIds.add(lastId + 1);
+      add5();
+    });
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,29 +82,33 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
         removeBottom: true,
         child: Stack(
           children: [
-            ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              controller: scrollController,
-              itemCount: imagesIds.length,
-              itemBuilder: (context, index) {
-                return FadeInImage(
-                  width: double.infinity,
-                  height: 300,
-                  fit: BoxFit.cover,
-                  placeholder:
-                      const AssetImage('assets/images/jar-loading.gif'),
-                  image: NetworkImage(
-                    'https://picsum.photos/500/300?image=${imagesIds[index]}',
-                  ),
-                );
-              },
+            RefreshIndicator(
+              color: AppTheme.primary,
+              onRefresh: onRefresh,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                controller: scrollController,
+                itemCount: imagesIds.length,
+                itemBuilder: (context, index) {
+                  return FadeInImage(
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                    placeholder:
+                        const AssetImage('assets/images/jar-loading.gif'),
+                    image: NetworkImage(
+                      'https://picsum.photos/500/300?image=${imagesIds[index]}',
+                    ),
+                  );
+                },
+              ),
             ),
             if (isLoading)
               Positioned(
                 width: 60,
                 bottom: 40,
                 left: MediaQuery.of(context).size.width * 0.5 - 30,
-                child: const LoadingIcon(),
+                child: const _LoadingIcon(),
               ),
           ],
         ),
@@ -98,8 +117,8 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   }
 }
 
-class LoadingIcon extends StatelessWidget {
-  const LoadingIcon({
+class _LoadingIcon extends StatelessWidget {
+  const _LoadingIcon({
     Key? key,
   }) : super(key: key);
 
