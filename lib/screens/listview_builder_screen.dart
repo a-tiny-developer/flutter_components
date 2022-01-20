@@ -29,13 +29,24 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
 
   Future<void> fetchData() async {
     if (isLoading) return;
-    isLoading = true;
-    await Future.delayed(const Duration(seconds: 5), () {
+    setState(() {
+      isLoading = true;
+    });
+    await Future.delayed(const Duration(seconds: 3), () {
       setState(() {
         add5();
+        isLoading = false;
       });
     });
-    isLoading = false;
+
+    if (scrollController.position.pixels + 100 >=
+        scrollController.position.maxScrollExtent) {
+      scrollController.animateTo(
+        scrollController.position.pixels + 120,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.fastOutSlowIn,
+      );
+    }
   }
 
   void add5() {
@@ -73,12 +84,13 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
                 );
               },
             ),
-            Positioned(
-              width: 60,
-              bottom: 40,
-              left: MediaQuery.of(context).size.width * 0.5 - 30,
-              child: const LoadingIcon(),
-            ),
+            if (isLoading)
+              Positioned(
+                width: 60,
+                bottom: 40,
+                left: MediaQuery.of(context).size.width * 0.5 - 30,
+                child: const LoadingIcon(),
+              ),
           ],
         ),
       ),
