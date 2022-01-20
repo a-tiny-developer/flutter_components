@@ -55,6 +55,12 @@ class AppRoutes {
       screen: SliderScreen(),
       icon: Icons.sledding_rounded,
     ),
+    MenuOption(
+      route: 'listviewbuilder',
+      name: 'InfineScroll & Pull to refresh',
+      screen: ListViewBuilderScreen(),
+      icon: Icons.build_circle_outlined,
+    ),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
