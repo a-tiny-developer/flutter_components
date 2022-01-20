@@ -10,6 +10,9 @@ class CustomInputField extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType,
     this.obscureText = false,
+    required this.onChanged,
+    // required this.formProperty,
+    // required this.formValues,
   }) : super(key: key);
 
   final String? labelText;
@@ -19,6 +22,9 @@ class CustomInputField extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType? keyboardType;
   final bool obscureText;
+  // final String formProperty;
+  // final Map<String, String> formValues;
+  final void Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +34,7 @@ class CustomInputField extends StatelessWidget {
       textCapitalization: TextCapitalization.words,
       keyboardType: keyboardType,
       obscureText: obscureText,
-      onChanged: (value) {
-        // print('value: $value');
-      },
+      onChanged: onChanged,
       validator: (value) {
         if (value == null) {
           return 'This value is required';
