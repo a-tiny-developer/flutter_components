@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
-
+// Dart imports:
 import 'dart:math' show Random;
+
+// Flutter imports:
+import 'package:flutter/material.dart';
 
 class AnimatedScreen extends StatefulWidget {
   const AnimatedScreen({Key? key}) : super(key: key);

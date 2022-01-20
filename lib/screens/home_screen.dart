@@ -1,5 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Project imports:
 import '../router/router.dart';
 
 class HomeScreen extends StatelessWidget {

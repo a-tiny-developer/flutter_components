@@ -1,7 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import '../widgets/widgets.dart';
+// Project imports:
 import '../models/models.dart';
+import '../widgets/widgets.dart';
 
 class InputsScreen extends StatelessWidget {
   const InputsScreen({Key? key}) : super(key: key);
