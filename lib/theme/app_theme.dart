@@ -87,11 +87,44 @@ class AppTheme {
         borderRadius: BorderRadius.circular(10),
       ),
     ),
+    inputDecorationTheme: const InputDecorationTheme(
+      floatingLabelStyle: TextStyle(color: primary),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: primary),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: primary),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+      ),
+    ),
     textTheme: darkTextTheme,
   );
   static TextTheme lightTextTheme = TextTheme(
+    headline5: GoogleFonts.roboto(
+      fontSize: 24.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    button: GoogleFonts.roboto(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
     subtitle1: GoogleFonts.roboto(
-      fontSize: 14.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
@@ -129,7 +162,7 @@ class AppTheme {
 
   static TextTheme darkTextTheme = TextTheme(
     subtitle1: GoogleFonts.roboto(
-      fontSize: 14.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
